@@ -54,9 +54,30 @@ export async function POST(req: Request) {
     const { id } = evt.data;
     const eventType = evt.type;
    
-    if(eventType === 'user.created') {
-      const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+    /*
+        {
+            created_at: 1723654606239,
+            email_address: 'abubakershekhani@yahoo.com',
+            id: 'idn_2keqtn1X7yUYRXVChbfq5bVAUkJ',
+            linked_to: [],
+            object: 'email_address',
+            reserved: false,
+            updated_at: 1723654675595,
+            verification: {
+            attempts: 1,
+            expire_at: 1723655238223,
+            status: 'verified',
+            strategy: 'email_code'
+            }
+        }
+    */
 
+    if(eventType === 'user.created') {
+        console.log(evt.data);  
+        /*
+        const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+
+      console.log(evt.data);      
       console.log(email_addresses);
       console.log(username);
   
@@ -80,6 +101,8 @@ export async function POST(req: Request) {
       }
   
       return NextResponse.json({ message: 'OK', user: newUser })
+      */
+      return NextResponse.json({ message: 'OK' })
     }
 
     /*
